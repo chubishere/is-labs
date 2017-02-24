@@ -1,0 +1,48 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font: 13px/1.5 helvetica;
+}
+
+.bordered {
+  padding: 5px;
+  border: 1px solid gray;
+}
+
+.layout{
+  display: flex;
+
+  &__left, &__right {
+    flex: 1 1 50%;
+  }
+
+  &__left {
+    border-right: 1px solid gray; 
+  }
+  &__right {
+  }
+}
+
+/* nav */
+$nav-height: 30px !default;
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: $nav-height;
+  height: $nav-height;
+  background-color: white;
+}
+
+.layout {
+  padding-top: $nav-height;
+  height: 100vh;
+  overflow-y: scroll;
+}

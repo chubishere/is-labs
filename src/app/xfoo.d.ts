@@ -1,1 +1,0 @@
-declare function foo(fu?: string):string;
