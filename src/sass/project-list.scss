@@ -1,0 +1,20 @@
+.projects-list {
+
+    &__item {
+        display: flex;
+        padding: 5px 8px;
+    }
+
+    .even {
+        background-color: #eee;
+    }
+
+    &__field {
+        width: 50px;
+        flex: 1 1 auto;
+    }
+
+    .client {
+        min-width: 50px;
+    }
+}
