@@ -38,21 +38,27 @@ export class Project {
         // ─── PROJECT NAME ────────────────────────────────────────────────
         //
         this.project = 
-            this.randomFrom(['Dog', 'Face', 'Leg', 'Elderly', 'Train', 'Driver', 'Idol', 'Animal', 'Food'])
-            + this.randomFrom(['Project', 'Diaries', 'Community', 'Care', 'Appreciation', 'Lovers Anonymous', 'Peevs', 'Spotters Club', 'Afficiandos Survey']);
+            this.randomFrom(['Dog', 'Face', 'Leg', 'Elderly', 'Train', 'Driver', 'Idol', 'Animal', 'Food', 'Caravan', 'Biplane', 'Perfume'])
+            + ' ' +
+            this.randomFrom(['Project', 'Diaries', 'Community', 'Care', 'Appreciator Anonymous', 'Lovers Unlimited', 'Peevs', 'Spotters Club', 'Afficiandos Survey']);
 
         //
         // ─── DATES ──────────────────────────────────────────────────
         //
         let start           = moment().add((Math.floor(Math.random()*100) - 50), 'days');
-        let end             = start.add(Math.ceil(Math.random()*100), 'days');
-        let end_admin       = end.add(6, 'months');
-        let ssl_expiration  = end.add(Math.ceil(Math.random()*100), 'days');
+        let end             = moment(start).add(Math.ceil(Math.random()*100), 'days');
+        let end_admin       = moment(end).add(6, 'months');
+        let ssl_expiration  = moment(end).add(Math.ceil(Math.random()*100), 'days');
+
         this.start_date     = start.format();
         this.end_date       = end.format();
         this.end_date_admin = end_admin.format();
+
+        // only some projects will have ssl certs
         if (Math.random() < 0.2) {
             this.ssl_expiration = end_admin.format();
+        }else{
+            this.ssl_expiration = '';
         }
 
         //

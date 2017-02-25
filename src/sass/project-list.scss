@@ -1,5 +1,9 @@
 .projects-list {
 
+    &--head {
+        font-weight: bold;
+    }
+
     &__item {
         display: flex;
         padding: 5px 8px;
@@ -10,11 +14,30 @@
     }
 
     &__field {
-        width: 50px;
+        width: 10px;
+        padding-right: 20px;
         flex: 1 1 auto;
     }
 
+    .day {
+        display: inline-block;
+        min-width: 1.4em;
+    }
+
+    .month {
+        display: inline-block;
+        min-width: 2em;
+    }
+
     .client {
+        min-width: 50px;
+    }
+
+    .project {
+        min-width: 100px;
+    }
+
+    .ssl-expiration {
         min-width: 50px;
     }
 }
