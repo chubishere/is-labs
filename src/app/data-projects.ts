@@ -26,6 +26,8 @@ export class Project {
     end_date_admin:string;
     stack:string;
     ssl_expiration:string;
+    response_rate:number;
+    response_rate_string:string;
 
     constructor() {
 
@@ -40,7 +42,9 @@ export class Project {
         this.project = 
             this.randomFrom(['Dog', 'Face', 'Leg', 'Elderly', 'Train', 'Driver', 'Idol', 'Animal', 'Food', 'Caravan', 'Biplane', 'Perfume'])
             + ' ' +
-            this.randomFrom(['Project', 'Diaries', 'Community', 'Care', 'Appreciator Anonymous', 'Lovers Unlimited', 'Peevs', 'Spotters Club', 'Afficiandos Survey']);
+            this.randomFrom(['Project', 'Diaries', 'Hunters', 'Care', 'Appreciators', 'Lovers', 'Haters', 'Spotters', 'Afficiandos'])
+            + ' ' +
+            this.randomFrom(['Anonymous', 'Community', 'Group', 'Club', 'Survey', 'Forum', 'Room', 'In Focus']);
 
         //
         // ─── DATES ──────────────────────────────────────────────────
@@ -65,6 +69,15 @@ export class Project {
         // ─── STACK ───────────────────────────────────────────────────────
         //
         this.stack = this.randomFrom(['ASIA', 'EU', 'US']);
+
+        //
+        // ─── RESPONSE RATES ──────────────────────────────────────────────
+        //
+        let total = Math.floor(Math.random() * 100);
+        let response = total - Math.floor(Math.random() * total);
+        this.response_rate = response/total;
+        this.response_rate_string = response + '/' + total;
+            
 
     }
 

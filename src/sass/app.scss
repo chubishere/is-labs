@@ -7,6 +7,10 @@ body {
   font: 13px/1.5 helvetica;
 }
 
+h1, h2, h3 {
+  margin: 0;
+}
+
 .bordered {
   $border-style: 1px solid gray;
   padding: 5px;
@@ -60,4 +64,12 @@ $nav-height: 30px !default;
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.pad {
+  padding: 5px 8px;
+
+  &--lots {
+  padding: 15px 20px;
+  }
 }
